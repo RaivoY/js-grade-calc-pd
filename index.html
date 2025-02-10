@@ -28,8 +28,6 @@
 
     <label for="grading-scheme">Vērtēšanas shēma:</label>
 
-    <div id="result"></div>
-
     <select id="grading-scheme">
       <option value="percentage">Procentuālā vērtība (0-100)</option>
       <option value="letter">Burtu vērtējums (A, B, C utt.)</option></select
@@ -37,7 +35,10 @@
 
     <button id="calculate-btn">Aprēķināt vērtējumu</button>
 
+    <div id="result"></div>
+
     <script>
+        
       const calculateBtn = document.getElementById("calculate-btn");
       const nameInput = document.getElementById("name");
       const pointsInput = document.getElementById("points");
@@ -62,11 +63,11 @@
           return;
         }
 
-        const grade = "";
-        if (gradingScheme === "procenti") {
+        const grade = "grading-scheme";
+        if (gradingScheme === "percentage") {
           const percentage = (points / maxPoints) * 100;
           grade = `Jūsu procentuālā vērtība ir: ${percentage.toFixed(2)}%`;
-        } else if (gradingScheme === "burti") {
+        } else if (gradingScheme === "letter") {
           if (points >= 90) {
             grade = "Jūsu burtu vērtējums ir: A";
           } else if (points >= 80) {
@@ -83,7 +84,7 @@
         resultDiv.innerHTML = grade;
       }
 
-      calculateBtn.addEventListener("click", handleClick());
+      calculateBtn.addEventListener("click", handleClick);
 
       //   === TERMINI un KODA PIEMĒRI ===
       // input, button, id, class, script, const, let, document, querySelector, getElementById,
