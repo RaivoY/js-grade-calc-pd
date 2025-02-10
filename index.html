@@ -27,16 +27,20 @@
     <input type="number" id="max-points" required /><br /><br />
 
     <label for="grading-scheme">Vērtēšanas shēma:</label>
+
+    <div id="result"></div>
+
     <select id="grading-scheme">
       <option value="percentage">Procentuālā vērtība (0-100)</option>
       <option value="letter">Burtu vērtējums (A, B, C utt.)</option></select
     ><br /><br />
 
-    <button>Aprēķināt vērtējumu</button>
+    <button id="calculate-btn">Aprēķināt vērtējumu</button>
 
     <script>
       const calculateBtn = document.getElementById("calculate-btn");
       const nameInput = document.getElementById("name");
+      const pointsInput = document.getElementById("points");
       const maxPointsInput = document.getElementById("max-points");
       const gradingSchemeSelect = document.getElementById("grading-scheme");
       const resultDiv = document.getElementById("result");
