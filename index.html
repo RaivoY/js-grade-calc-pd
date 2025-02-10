@@ -38,7 +38,6 @@
     <div id="result"></div>
 
     <script>
-        
       const calculateBtn = document.getElementById("calculate-btn");
       const nameInput = document.getElementById("name");
       const pointsInput = document.getElementById("points");
@@ -55,7 +54,6 @@
         // Validate inputs
         if (!name || isNaN(points) || isNaN(maxPoints) || maxPoints <= 0) {
           resultDiv.innerHTML = "Lūdzu, aizpildiet visus laukus pareizi.";
-          return;
         }
         if (points < 0 || points > maxPoints) {
           resultDiv.innerHTML =
